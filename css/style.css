@@ -13,12 +13,13 @@ header {
 }
 main {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #deecec;
     border-radius: 8px;
     padding-top: 1px;
     margin-top: -1px;
     margin: 5px;
+    min-height: 100vh;
 }
 .img1 {
     border-radius: 50%;
@@ -51,8 +52,26 @@ hr {
 li {
     margin: 5px 0px;
 }
+ul{
+    padding-bottom: 50px;
+}
 .btn-delete {
     background-color: transparent;
     color: rgba(255, 0, 0, 0.699);
+}
+.animated {
+    animation-name: fade;
+    position: relative;
+    animation-duration: 500ms;
+}
+@keyframes fade {
+    50% {
+        right: 50px;
+        opacity: 0.5;
+    }
+    100% {
+        right:100px;
+        opacity: 0.1;
+    }
 }
 
