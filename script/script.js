@@ -45,20 +45,19 @@ let delFromStorage = (item) => {
     localStorage.clear();
     localStorage.setItem('items', JSON.stringify(itemArray));
 }
-itemArray.forEach(i => {
-    addToListFromStorage(i);
-});
 
 let delBtn = function(x){
+    delFromStorage(x.parentNode.innerText)
     $(x.parentNode).addClass('animated');
     $(x.parentNode).fadeOut(500);
-    delFromStorage(x.parentNode.value)
 };
 
 let inputValue = () => {
     window.task = document.querySelector('#task');
     return task.value;
 };
-
+itemArray.forEach(i => {
+    addToListFromStorage(i);
+});
 btnAdd.addEventListener('click', addToList);
 
